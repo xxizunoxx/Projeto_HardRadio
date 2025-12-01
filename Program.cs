@@ -1,7 +1,8 @@
 ﻿using System;
 
-// Screen Sound
-string msgDeBoasVindas = "Bem-vindo ao Screen Sound!";
+// Hard Radio - Um aplicativo de console para gerenciar playlists de música.
+
+string msgDeBoasVindas = "Bem-vindo ao Hard Radio!";
 
 void TelaDeBoasVindas()
 {
@@ -14,6 +15,7 @@ void TelaDeBoasVindas()
 ╚╝─╚╩╝╚╩╝╚══╝╚╝╚═╩╝╚╩══╩╩══╝");
 }
 
+
 TelaDeBoasVindas();
 Console.WriteLine(msgDeBoasVindas);
 
@@ -22,7 +24,7 @@ Console.WriteLine(msgDeBoasVindas);
 // =============================
 
 MenuPrincipal.Menu();
-MenuPrincipal.Opcoes();
+MenuPrincipal.OpcoesMenu();
 
 
 class MenuPrincipal
@@ -41,7 +43,7 @@ Menu Principal
 Digite a opção desejada:");
     }
 
-    public static void Opcoes()
+    public static void OpcoesMenu()
     {
         string opcao = Console.ReadLine()!;
 
