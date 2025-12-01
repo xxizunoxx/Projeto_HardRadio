@@ -1,14 +1,15 @@
 
 # 🎧 Hard Radio – Gerenciador de Playlists no Console
 
+O **Hard Radio** é um aplicativo de console desenvolvido em C# que simula um sistema simples de gerenciamento de playlists e músicas.  
+Ele permite criar, listar e remover playlists e músicas por meio de um menu interativo no terminal.
+
+## 🛡 Badges
 ![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge)
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Free-blue?style=for-the-badge)
 ![Console App](https://img.shields.io/badge/Type-Console%20App-grey?style=for-the-badge)
-
-O **Hard Radio** é um aplicativo de console desenvolvido em C# que simula um sistema simples de gerenciamento de playlists e músicas.  
-Ele permite criar, listar e remover playlists e músicas por meio de um menu interativo no terminal.
 
 ---
 
