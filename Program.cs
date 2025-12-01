@@ -1,6 +1,4 @@
-﻿using System;
-
-// Hard Radio - Um aplicativo de console para gerenciar playlists de música.
+﻿// Hard Radio - Um aplicativo de console para gerenciar playlists de música.
 
 string msgDeBoasVindas = "Bem-vindo ao Hard Radio!";
 
@@ -31,7 +29,7 @@ class MenuPrincipal
 {
     public static void Menu()
     {
-        Console.WriteLine(@"
+        Console.Write(@"
 Menu Principal
 1 - Listar Playlists
 2 - Adicionar Playlist
@@ -51,7 +49,6 @@ Digite a opção desejada:");
         {
             case "1":
                 Console.WriteLine("Listando Playlists...");
-                    
                 break;
             case "2":
                 Console.WriteLine("Adicionando Playlist...");
