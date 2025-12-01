@@ -104,7 +104,9 @@ public static void AnimarTexto(string texto, int velocidade = 15)
 ## 🛠 Tecnologias Utilizadas
 
 ✔ C#
+
 ✔ .NET SDK (Console Application)
+
 ✔ Programação Orientada a Objetos (POO)
 - Classe Playlist
 - Encapsulamento
@@ -142,11 +144,17 @@ dotnet run
 ---
 ## 📂 Estrutura do Projeto
 Projeto_HardRadio/
+
 │
+
 ├── MenuPrincipal.cs      # Menu principal com cores e animação
+
 ├── Playlist.cs           # Classe Playlist com lista interna de músicas
+
 ├── Program.cs            # Ponto de entrada da aplicação
+
 ├── Projeto_HardRadio.csproj
+
 └── README.md
 
 ---
