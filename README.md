@@ -1,10 +1,14 @@
 
-# 🎧 Hard Radio – Gerenciador de Playlists no Console
+# 🎧 Hard Radio – Console Playlist Manager
 
 O **Hard Radio** é um aplicativo de console desenvolvido em C# que simula um sistema simples de gerenciamento de playlists e músicas.  
 Ele permite criar, listar e remover playlists e músicas por meio de um menu interativo no terminal.
 
+
+---
+
 ## 🛡 Badges
+
 ![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge)
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
@@ -13,35 +17,115 @@ Ele permite criar, listar e remover playlists e músicas por meio de um menu int
 
 ---
 
-## 🚀 Funcionalidades
+# 📌 Sobre o Projeto (PT-BR)
 
-### 📁 Playlists
-- Listar playlists
-- Adicionar playlist
-- Remover playlist
+O **Hard Radio** é um aplicativo de console totalmente estilizado, desenvolvido em C#, para gerenciar playlists e músicas.  
+Agora ele conta com:
 
-### 🎵 Músicas
-- Listar músicas
-- Adicionar música
-- Remover música
+✔ Playlists como objetos reais  
+✔ Cada playlist possui sua própria lista interna de músicas  
+✔ Interface com cores  
+✔ Animação "digitando" nos textos  
+✔ Menus separados para playlist e músicas  
+✔ Experiência fluida e profissional no console  
 
-### 🧭 Menu Interativo
-- 1 - Listar Playlists
-- 2 - Adicionar Playlist
-- 3 - Remover Playlist
-- 4 - Listar Músicas
-- 5 - Adicionar Música
-- 6 - Remover Música
-- 0 - Sair
+---
 
+# 🚀 Funcionalidades
+
+### 📁 **Playlists**
+- Criar playlist  
+- Listar playlists  
+- Remover playlist  
+- Selecionar playlist para gerenciar músicas  
+
+### 🎵 **Músicas por Playlist**
+Cada playlist possui sua **própria lista interna**:
+- Listar músicas  
+- Adicionar música  
+- Remover música  
+
+### 🎨 **Interface e Estilo**
+- Cores no console (verde, azul, vermelho)  
+- Animação de texto (`AnimarTexto`)  
+- Menus limpos e responsivos  
+
+---
+
+## 💡 Estrutura do Sistema
+
+Agora o Hard Radio possui a classe:
+
+```csharp
+public class Playlist
+{
+    public string Nome { get; set; }
+    public List<string> Musicas { get; set; } = new List<string>();
+
+    public Playlist(string nome)
+    {
+        Nome = nome;
+    }
+}
+```
+
+O menu principal manipula listas de objetos:
+
+```csharp
+public static List<Playlist> Playlists = new List<Playlist>();
+```
+
+E o método de gerenciamento usa menus específicos:
+
+```csharp
+GerenciarMusicas(playlist);
+```
+
+---
+
+## ✨ Animações
+
+O sistema usa um método de efeito digitado:
+
+```csharp
+public static void AnimarTexto(string texto, int velocidade = 15)
+{
+    foreach (char c in texto)
+    {
+        Console.Write(c);
+        Thread.Sleep(velocidade);
+    }
+    Console.WriteLine();
+}
+```
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
-- C#
-- .NET SDK
-- Programação Orientada a Objetos
-- Console Application
+
+✔ C#
+✔ .NET SDK (Console Application)
+✔ Programação Orientada a Objetos (POO)
+- Classe Playlist
+- Encapsulamento
+- Listas internas
+- Objetos reais representando entidades
+
+✔ Manipulação de Listas Genéricas
+- List<T>
+- Busca (Find, Contains, etc.)
+
+✔ Console Avançado
+- Cores (Console.ForegroundColor)
+- Reset de cores (Console.ResetColor())
+- Efeitos visuais no terminal
+
+✔ Threading
+- Animações com Thread.Sleep para o efeito digitando
+
+✔ Menus Interativos em Loop
+- while(true)
+- navegação entre menus
 
 ---
 
@@ -58,53 +142,37 @@ dotnet run
 ---
 ## 📂 Estrutura do Projeto
 Projeto_HardRadio/
-
 │
-
-├── MenuPrincipal.cs      # Classe principal com todas as funcionalidades
-
+├── MenuPrincipal.cs      # Menu principal com cores e animação
+├── Playlist.cs           # Classe Playlist com lista interna de músicas
 ├── Program.cs            # Ponto de entrada da aplicação
-
 ├── Projeto_HardRadio.csproj
-
 └── README.md
 
 ---
-## 🧠 Lógica do Sistema
 
-### O sistema utiliza duas listas globais para armazenar dados:
+## 💻 Exemplo de Uso
 
-```csharp
-public static List<string> Playlists = new List<string>();
-public static List<string> Musicas = new List<string>();
-```
-### Essas listas são manipuladas pelos métodos:
+Criar playlist:
 
-- AdicionarPlaylist()
-- ListarPlaylists()
-- RemovendoPlaylist()
-- AdicionandoMusica()
-- ListandoMusicas()
-- RemoverMusica()
-
-### O menu principal utiliza um loop contínuo:
-
-``` csharp
-while (true)
-{
-    // Exibe menu e processa opções
-}
+```nginx
+Digite o nome da nova playlist:
+> Rock Clássico
+Playlist 'Rock Clássico' criada com sucesso!
 ```
 
----
+```vbnet
+Selecionada: Rock Clássico
+Digite o nome da música:
+> Highway to Hell
+Música 'Highway to Hell' adicionada!
+```
 
-## 🔧 Melhorias Futuras
-
-- Associar músicas a playlists específicas
-- Criar classe Playlist com lista interna de músicas
-- Persistência em arquivos JSON
-- Adicionar cores e animações no console
-- Criar interface gráfica (WinForms/WPF)
+```diff
+🎵 Músicas da playlist 'Rock Clássico':
+- Highway to Hell
+- Back in Black
+```
 
 ## 👤 Autor
 
