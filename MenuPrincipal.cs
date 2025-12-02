@@ -168,6 +168,7 @@ Digite a opção desejada:");
 1 - Listar Músicas
 2 - Adicionar Música
 3 - Remover Música
+4 - Avaliar Música
 0 - Voltar
 
 Escolha a opção:");
@@ -179,6 +180,7 @@ Escolha a opção:");
                 case "1": ListarMusicas(playlist); break;
                 case "2": AdicionarMusica(playlist); break;
                 case "3": RemoverMusica(playlist); break;
+                case "4": AvaliarMusica(playlist); break;
                 case "0": return;
                 default:
                     CorVermelha();
@@ -216,7 +218,8 @@ Escolha a opção:");
         AnimarTexto("Digite o nome da música:");
         string nome = Console.ReadLine()!;
 
-        playlist.Musicas.Add(nome);
+        //playlist.Musicas.Add(nome);
+        playlist.Musicas[nome] = new List<int>();
 
         CorVerde();
         AnimarTexto($"Música '{nome}' adicionada!");
@@ -232,7 +235,8 @@ Escolha a opção:");
         AnimarTexto("\nDigite o nome da música que deseja remover:");
         string nome = Console.ReadLine()!;
 
-        if (!playlist.Musicas.Contains(nome))
+        //if (!playlist.Musicas.Contains(nome))
+        if (!playlist.Musicas.ContainsKey(nome))
         {
             CorVermelha();
             AnimarTexto("Música não encontrada.");
@@ -249,6 +253,41 @@ Escolha a opção:");
         Console.ReadKey();
     }
 
+    public static void AvaliarMusica(Playlist playlist)
+    {
+        Console.Clear();
+        ListarMusicas(playlist);
+
+        AnimarTexto("\nDigite o nome da música que deseja avaliar:");
+        string nome = Console.ReadLine()!;
+
+        //if (!playlist.Musicas.Contains(nome))
+        if (!playlist.Musicas.ContainsKey(nome))
+        {
+            CorVermelha();
+            AnimarTexto("Música não encontrada.");
+            ResetCor();
+            Console.ReadKey();
+            return;
+        }
+
+        AnimarTexto("Digite a avaliação (1 a 5):");
+        int avaliacao;
+        while (!int.TryParse(Console.ReadLine()!, out avaliacao) || avaliacao < 1 || avaliacao > 5)
+        {
+            CorVermelha();
+            AnimarTexto("Avaliação inválida. Digite um número entre 1 e 5:");
+            ResetCor();
+        }
+
+        //playlist.Musicas[nome].Add(avaliacao);
+        playlist.Musicas[nome].Add(avaliacao);
+
+        CorVerde();
+        AnimarTexto($"Música '{nome}' avaliada com {avaliacao} estrelas!");
+        ResetCor();
+        Console.ReadKey();
+    }
     public static void Sair()
     {
         Console.Clear();
