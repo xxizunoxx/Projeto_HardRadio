@@ -206,8 +206,13 @@ Escolha a opção:");
             return;
         }
 
-        foreach (var m in playlist.Musicas)
-            Console.WriteLine($"- {m}");
+        foreach (var musica in playlist.Musicas)
+        {
+            double media = musica.Value.Count > 0 ? musica.Value.Average() : 0;
+            Console.WriteLine($"- {musica.Key} (Média: {media:F1})");
+        }
+
+
 
         Console.ReadKey();
     }
@@ -219,7 +224,7 @@ Escolha a opção:");
         string nome = Console.ReadLine()!;
 
         //playlist.Musicas.Add(nome);
-        playlist.Musicas[nome] = new List<int>();
+        playlist.Musicas.Add(nome, new List<int>());
 
         CorVerde();
         AnimarTexto($"Música '{nome}' adicionada!");
