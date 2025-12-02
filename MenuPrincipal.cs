@@ -25,6 +25,32 @@ class MenuPrincipal
 
     // ========== MENU PRINCIPAL ==========
 
+    public static int LerNumeroValido(string mensagem, int minimo, int maximo)
+    {
+        int numero;
+
+        CorAzul();
+        AnimarTexto(mensagem);
+        ResetCor();
+
+        while (true)
+        {
+            string? entrada = Console.ReadLine();
+
+            if (int.TryParse(entrada, out numero) && numero >= minimo && numero <= maximo)
+            {
+                CorVerde();
+                AnimarTexto("Valor aceito!");
+                ResetCor();
+                return numero;
+            }
+
+            CorVermelha();
+            AnimarTexto($"Entrada inválida! Digite um número entre {minimo} e {maximo}:");
+            ResetCor();
+        }
+    }
+
     public static void Menu()
     {
         while (true)
@@ -277,16 +303,9 @@ Escolha a opção:");
         }
 
         AnimarTexto("Digite a avaliação (1 a 5):");
-        int avaliacao;
-        while (!int.TryParse(Console.ReadLine()!, out avaliacao) || avaliacao < 1 || avaliacao > 5)
-        {
-            CorVermelha();
-            AnimarTexto("Avaliação inválida. Digite um número entre 1 e 5:");
-            ResetCor();
-        }
-
-        //playlist.Musicas[nome].Add(avaliacao);
+        int avaliacao = LerNumeroValido("Digite uma nota entre 1 e 5:", 1, 5);
         playlist.Musicas[nome].Add(avaliacao);
+
 
         CorVerde();
         AnimarTexto($"Música '{nome}' avaliada com {avaliacao} estrelas!");
