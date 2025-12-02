@@ -293,6 +293,7 @@ Escolha a opção:");
         ResetCor();
         Console.ReadKey();
     }
+
     public static void Sair()
     {
         Console.Clear();
