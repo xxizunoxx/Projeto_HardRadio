@@ -7,6 +7,7 @@ public static class Saudacao
         Console.WriteLine("Olá, " + nome + "!");
     }
 }
+
 public static class Atividade
 
 {
@@ -80,55 +81,6 @@ public static class JogaDoAdivinha
         Console.WriteLine("Suas tentativas acabaram. O número secreto era: " + numeroSecreto);
     }
 }
-
-
-/*public static class JogoDoAdivinha
-{
-    public static void IniciarJogo()
-    {
-        // Cria o número secreto entre 1 e 100
-        Random random = new Random();
-        int numeroSecreto = random.Next(1, 101); 
-        int tentativas = 10;
-
-        Console.WriteLine("Bem-vindo ao Jogo de Adivinhação!");
-        Console.WriteLine($"Você tem {tentativas} tentativas para adivinhar o número entre 1 e 100.");
-
-        for (int i = 0; i < tentativas; i++)
-        {
-            Console.Write("Digite seu palpite: ");
-
-            // Lê o palpite e valida se é número
-            string? entrada = Console.ReadLine();
-            if (!int.TryParse(entrada, out int palpite))
-            {
-                Console.WriteLine("Entrada inválida! Digite apenas números.");
-                i--; // Não desconta a tentativa
-                continue;
-            }
-
-            // Verifica o palpite
-            if (palpite == numeroSecreto)
-            {
-                Console.WriteLine("🎉 Parabéns! Você adivinhou o número!");
-                return;
-            }
-            else if (palpite < numeroSecreto)
-            {
-                Console.WriteLine("🔼 O número secreto é maior.");
-            }
-            else
-            {
-                Console.WriteLine("🔽 O número secreto é menor.");
-            }
-
-            Console.WriteLine($"Tentativas restantes: {tentativas - i - 1}");
-        }
-
-        Console.WriteLine($"❌ Suas tentativas acabaram. O número secreto era: {numeroSecreto}");
-    }
-}
-*/
 
 public static class OperacoesMatematicas
 {
@@ -249,3 +201,141 @@ public static class ExibirTituloDaOpcao
         string asteriscos = string.Empty.PadLeft(quantidadeDeLetras + 4, '*');
     }
 }
+
+public static class DicionarioNotasAlunos
+{
+    public static Dictionary<string, List<int>> notasAlunos = new Dictionary<string, List<int>>();
+
+    public static void AdicionarNota(string nomeAluno, int nota)
+    {
+        if (!notasAlunos.ContainsKey(nomeAluno))
+        {
+            notasAlunos[nomeAluno] = new List<int>();
+        }
+        notasAlunos[nomeAluno].Add(nota);
+    }
+
+    public static void ExibirNotas()
+    {
+        foreach (var aluno in notasAlunos)
+        {
+            string nome = aluno.Key;
+            List<int> notas = aluno.Value;
+            double media = notas.Count > 0 ? notas.Average() : 0;
+
+            Console.WriteLine($"Aluno: {nome}, Notas: {string.Join(", ", notas)}, Média: {media:F1}");
+        }
+    }
+}
+
+public static class EstoqueLoja
+{
+    public static Dictionary<string, int> estoque = new Dictionary<string, int>();
+
+    public static void AdicionarProduto(string nomeProduto, int quantidade)
+    {
+        if (estoque.ContainsKey(nomeProduto))
+        {
+            estoque[nomeProduto] += quantidade;
+        }
+        else
+        {
+            estoque[nomeProduto] = quantidade;
+        }
+    }
+
+    public static void ExibirEstoque()
+    {
+        foreach (var produto in estoque)
+        {
+            Console.WriteLine($"Produto: {produto.Key}, Quantidade em estoque: {produto.Value}");
+        }
+    }
+}
+
+public static class QuizSimples
+{
+    public static Dictionary<string, string> perguntasRespostas = new Dictionary<string, string>
+    {
+        {"Qual é a capital da França?", "Paris"},
+        {"Qual é o maior planeta do sistema solar?", "Júpiter"},
+        {"Quem escreveu 'Dom Quixote'?", "Miguel de Cervantes"}
+    };
+
+    public static void IniciarQuiz()
+    {
+        int pontuacao = 0;
+
+        foreach (var pergunta in perguntasRespostas)
+        {
+            Console.WriteLine(pergunta.Key);
+            string respostaUsuario = Console.ReadLine()!;
+
+            if (respostaUsuario.Equals(pergunta.Value, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Resposta correta!");
+                pontuacao++;
+            }
+            else
+            {
+                Console.WriteLine($"Resposta incorreta! A resposta correta é: {pergunta.Value}");
+            }
+        }
+
+        Console.WriteLine($"Quiz finalizado! Sua pontuação: {pontuacao}/{perguntasRespostas.Count}");
+    }
+}
+
+public static class SistemaLogin
+{
+    public static Dictionary<string, string> usuarios = new Dictionary<string, string>
+    {
+        {"usuario1", "senha123"},
+        {"usuario2", "senha456"},
+        {"usuario3", "senha789"}
+    };
+
+    public static void RealizarLogin()
+    {
+        Console.WriteLine("Digite o nome de usuário:");
+        string nomeUsuario = Console.ReadLine()!;
+
+        Console.WriteLine("Digite a senha:");
+        string senha = Console.ReadLine()!;
+
+        if (usuarios.ContainsKey(nomeUsuario) && usuarios[nomeUsuario] == senha)
+        {
+            Console.WriteLine("Login bem-sucedido!");
+        }
+        else
+        {
+            Console.WriteLine("Nome de usuário ou senha incorretos.");
+        }
+    }
+}
+
+public static class MediaVendasCarros
+{
+    public static Dictionary<string, List<int>> vendasCarros = new Dictionary<string, List<int>> {
+        { "Bugatti Veyron", new List<int> { 10, 15, 12, 8, 5 } },
+        { "Koenigsegg Agera RS", new List<int> { 2, 3, 5, 6, 7 } },
+        { "Lamborghini Aventador", new List<int> { 20, 18, 22, 24, 16 } },
+        { "Pagani Huayra", new List<int> { 4, 5, 6, 5, 4 } },
+        { "Ferrari LaFerrari", new List<int> { 7, 6, 5, 8, 10 } }
+    };
+
+    public static void CalcularMediaVendas(string nomeCarro)
+    {
+        if (vendasCarros.ContainsKey(nomeCarro))
+        {
+            List<int> vendas = vendasCarros[nomeCarro];
+            double media = vendas.Average();
+            Console.WriteLine($"A média de vendas do {nomeCarro} é: {media:F2}");
+        }
+        else
+        {
+            Console.WriteLine("Carro não encontrado na lista.");
+        }
+    }
+}
+
