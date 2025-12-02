@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\13063203\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj": {}
+    "C:\\Users\\caiqu\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\13063203\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj": {
+    "C:\\Users\\caiqu\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\13063203\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj",
+        "projectUniqueName": "C:\\Users\\caiqu\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj",
         "projectName": "dotnet",
-        "projectPath": "C:\\Users\\13063203\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj",
-        "packagesPath": "C:\\Users\\13063203\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\13063203\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\obj\\",
+        "projectPath": "C:\\Users\\caiqu\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\dotnet.csproj",
+        "packagesPath": "C:\\Users\\caiqu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\caiqu\\OneDrive\\Estudo\\dotnet\\Projeto_HardRadio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\13063203\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\caiqu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
