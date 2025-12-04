@@ -13,8 +13,12 @@
         DicionarioNotasAlunos.ExibirNotas();*/
         //OperacoesMatematicas.RealizarOperacoes();
         MenuPrincipal.Menu();
+        //IdadeUser.CalcularIdade();
         //SistemaLogin.RealizarLogin();
         //MediaVendasCarros.CalcularMediaVendas(nomeCarro: "Bugatti Veyron");
+        //DoacoesRecebidas.LerDados();
+        //DoacoesRecebidas.ExibirDoacao();
+        //MilhasEmKm.ConverterMilhasParaKm();
     }
 }
 

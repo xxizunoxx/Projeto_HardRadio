@@ -339,4 +339,84 @@ public static class MediaVendasCarros
     }
 }
 
+public static class IdadeUser
+{
+    public static void CalcularIdade()
+    {
+        Console.WriteLine("Digite seu ano de nascimento:");
+        int anoNascimento = int.Parse(Console.ReadLine()!);
+        int anoAtual = DateTime.Now.Year;
+        int idade = anoAtual - anoNascimento;
+
+        Console.WriteLine($"Sua idade é: {idade}.");
+    }
+}
+
+public static class DoacoesRecebidas
+{
+    static double doacao; 
+    static bool tipoDoacao;
+    static string tipoDeConta = "";
+
+    public static void LerDados()
+    {
+        Console.WriteLine("Digite o valor da doação:");
+        doacao = double.Parse(Console.ReadLine()!);
+
+        Console.WriteLine("A doação é anônima? (T/F):");
+        //tipoDoacao = bool.Parse(Console.ReadLine()!);
+        if (Console.ReadLine()!.ToLower() == "t")
+        {
+            tipoDoacao = true;
+            Console.WriteLine("Anônima");
+        }
+        else
+        {
+            tipoDoacao = false;
+            Console.WriteLine("Não anônima");
+        }
+        Console.WriteLine("Digite o tipo de conta (C/P):");
+        if (Console.ReadLine()!.ToLower() == "c")
+        {
+            tipoDeConta = "Corrente";
+        }
+        else
+        {
+            tipoDeConta = "Poupança";
+        }
+    }
+    public static void ExibirDoacao()
+    {
+        Console.WriteLine($"Valor recebido: R$ {doacao:F2}");
+        if (tipoDoacao == true)
+        {
+            Console.WriteLine($"Doação anônima: {tipoDoacao}");
+        }
+        else
+        {
+            Console.WriteLine($"Doação anônima: {tipoDoacao}");
+        }
+        if (tipoDeConta == "Corrente")
+        {
+            Console.WriteLine($"Tipo de conta: {tipoDeConta}");
+        }
+        else
+        {
+            Console.WriteLine($"Tipo de conta: {tipoDeConta}");
+        }
+    }
+}
+
+public static class MilhasEmKm
+{
+    public static void ConverterMilhasParaKm()
+    {
+        Console.WriteLine("Digite a distância em milhas:");
+        double milhas = double.Parse(Console.ReadLine()!);
+        double km = milhas * 1.60934;
+        Console.WriteLine($"{milhas} milhas equivalem a {km:F4} quilômetros.");
+    }
+}
+
+
 
