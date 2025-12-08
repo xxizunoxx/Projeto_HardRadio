@@ -3,33 +3,6 @@
     static void Main(string[] args)
     {
         MenuPrincipal.Menu();
-        //SomarListaInteiros.SomarLista();
-        //ListaBandas.MostrarMenu();
-        /*DicionarioNotasAlunos.AdicionarNota(nomeAluno: "João", nota: 8);
-        DicionarioNotasAlunos.AdicionarNota(nomeAluno: "João", nota: 9);
-        DicionarioNotasAlunos.AdicionarNota(nomeAluno: "Maria", nota: 10);
-        DicionarioNotasAlunos.AdicionarNota(nomeAluno: "Maria", nota: 7);
-        DicionarioNotasAlunos.AdicionarNota(nomeAluno: "Pedro", nota: 6);
-        DicionarioNotasAlunos.AdicionarNota(nomeAluno: "Pedro", nota: 8);
-        DicionarioNotasAlunos.ExibirNotas();*/
-        //OperacoesMatematicas.RealizarOperacoes();
-        //IdadeUser.CalcularIdade();
-        //SistemaLogin.RealizarLogin();
-        //MediaVendasCarros.CalcularMediaVendas(nomeCarro: "Bugatti Veyron");
-        //DoacoesRecebidas.LerDados();
-        //DoacoesRecebidas.ExibirDoacao();
-        //MilhasEmKm.ConverterMilhasParaKm();
-        //MinutosEmHoras.ConverterMinutosParaHoras();
-        //CalculandoRetangulo.CalcularArea();
-        //CalculandoMedia.CalcularMedia();
-        //AumentoSalario.CalcularAumento();
-        //CalculoRaioCirculo.CalcularAreaECircunferencia();
-        //OrdenarNumeros.Ordenar();
-        //AreaTriangulo.CalcularArea();
-        //TiposDeTriangulo.VerificarTipoTriangulo();
-        //TempoDeJogo.CalcularTempo();
-        //TempoDeJogoHorasMinutos.CalcularTempo();
-        //AumentoDeSalario.CalcularAumento();
     }
 }
 
