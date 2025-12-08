@@ -524,7 +524,7 @@ public static class OrdenarNumeros
     public static void Ordenar()
     {   
         List<int> numeros = new List<int> ();
-        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        foreach (var valoresStr in Console.ReadLine()!.Split(' '))
         {
             int valor = int.Parse(valoresStr);
             numeros.Add(valor);
@@ -551,7 +551,7 @@ public static class AreaTriangulo
     public static void CalcularArea()
     {
         List<float> numeros = new List<float> ();
-        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        foreach (var valoresStr in Console.ReadLine()!.Split(' '))
         {
             float valor = float.Parse(valoresStr);
             numeros.Add(valor);
@@ -582,7 +582,7 @@ public static class Multiplos
     public static void VerificarMultiplos()
     {
         List<string> numeros = new List<string> ();
-        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        foreach (var valoresStr in Console.ReadLine()!.Split(' '))
         {
             string valor = valoresStr;
             numeros.Add(valor);
@@ -607,7 +607,7 @@ public static class TiposDeTriangulo
     public static void VerificarTipoTriangulo()
     {
         List<float> numeros = new List<float> ();
-        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        foreach (var valoresStr in Console.ReadLine()!.Split(' '))
         {
             float valor = float.Parse(valoresStr);
             numeros.Add(valor);
@@ -650,7 +650,7 @@ public static class TempoDeJogo
 {
     public static void CalcularTempo()
     {
-        string[] valoresStr = Console.ReadLine().Split(' ');
+        string[] valoresStr = Console.ReadLine()!.Split(' ');
 
         int horaInicio = int.Parse(valoresStr[0]);
         int horaFim = int.Parse(valoresStr[1]);
@@ -673,7 +673,7 @@ public static class TempoDeJogoHorasMinutos
 {
     public static void CalcularTempo()
     {
-        string[] valoresStr = Console.ReadLine().Split(' ');
+        string[] valoresStr = Console.ReadLine()!.Split(' ');
 
         int horaInicio = int.Parse(valoresStr[0]);
         int minutoIncio = int.Parse(valoresStr[1]);
@@ -700,7 +700,7 @@ public static class AumentoDeSalario
 {
     public static void CalcularAumento()
     {
-        double salario = double.Parse(Console.ReadLine());
+        double salario = double.Parse(Console.ReadLine()!);
         double percentualAumento;
 
         if (salario <= 400.00)
@@ -798,7 +798,7 @@ public static class DDD
 {
     public static void IdentificarCidade()
     {
-        int ddd = int.Parse(Console.ReadLine());
+        int ddd = int.Parse(Console.ReadLine()!);
 
         switch (ddd)
         {
@@ -887,7 +887,7 @@ public static class NumerosPositivos
 
         for (int i = 0; i < 6; i++)
         {
-            double numero = double.Parse(Console.ReadLine());
+            double numero = double.Parse(Console.ReadLine()!);
             if (numero > 0)
             {
                 contador++;
