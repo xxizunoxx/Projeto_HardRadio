@@ -3,7 +3,7 @@ public static class Saudacao
     public static void PerguntarNome()
     {
         Console.WriteLine("Qual é o seu nome?");
-        string nome = Console.ReadLine();
+        string nome = Console.ReadLine()!;
         Console.WriteLine("Olá, " + nome + "!");
     }
 }
@@ -502,7 +502,32 @@ public static class AumentoSalario
     }
 }
 
+public static class CalculoRaioCirculo
+{
+    public static void CalcularAreaECircunferencia()
+    {
+        Console.WriteLine("Digite o raio do círculo:");
+        double raio = double.Parse(Console.ReadLine()!);
+        double pi = 3.14159;
+        double area = pi * raio * raio;
+        double circunferencia = 2 * pi * raio;
+        Console.WriteLine($"Área do círculo: {area:F2}");
+        Console.WriteLine($"Circunferência do círculo: {circunferencia:F2}");
+    }
+}
 
-public static class CalculoRaio
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

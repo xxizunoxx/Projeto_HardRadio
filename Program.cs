@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        //MenuPrincipal.Menu();
+        MenuPrincipal.Menu();
         //SomarListaInteiros.SomarLista();
         //ListaBandas.MostrarMenu();
         /*DicionarioNotasAlunos.AdicionarNota(nomeAluno: "João", nota: 8);
@@ -22,7 +22,8 @@
         //MinutosEmHoras.ConverterMinutosParaHoras();
         //CalculandoRetangulo.CalcularArea();
         //CalculandoMedia.CalcularMedia();
-        AumentoSalario.CalcularAumento();
+        //AumentoSalario.CalcularAumento();
+        //CalculoRaioCirculo.CalcularAreaECircunferencia();
     }
 }
 
