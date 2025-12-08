@@ -2,6 +2,7 @@
 {
     static void Main(string[] args)
     {
+        //MenuPrincipal.Menu();
         //SomarListaInteiros.SomarLista();
         //ListaBandas.MostrarMenu();
         /*DicionarioNotasAlunos.AdicionarNota(nomeAluno: "João", nota: 8);
@@ -12,13 +13,16 @@
         DicionarioNotasAlunos.AdicionarNota(nomeAluno: "Pedro", nota: 8);
         DicionarioNotasAlunos.ExibirNotas();*/
         //OperacoesMatematicas.RealizarOperacoes();
-        MenuPrincipal.Menu();
         //IdadeUser.CalcularIdade();
         //SistemaLogin.RealizarLogin();
         //MediaVendasCarros.CalcularMediaVendas(nomeCarro: "Bugatti Veyron");
         //DoacoesRecebidas.LerDados();
         //DoacoesRecebidas.ExibirDoacao();
         //MilhasEmKm.ConverterMilhasParaKm();
+        //MinutosEmHoras.ConverterMinutosParaHoras();
+        //CalculandoRetangulo.CalcularArea();
+        //CalculandoMedia.CalcularMedia();
+        AumentoSalario.CalcularAumento();
     }
 }
 

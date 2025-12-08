@@ -418,5 +418,91 @@ public static class MilhasEmKm
     }
 }
 
+public static class MinutosEmHoras
+{
+    public static void ConverterMinutosParaHoras()
+    {
+        Console.WriteLine("Digite a quantidade de minutos:");
+        int minutos = int.Parse(Console.ReadLine()!);
+        int horas = minutos / 60;
+        int minutosRestantes = minutos % 60;
+        Console.WriteLine($"{minutos} minutos equivalem a {horas} horas e {minutosRestantes} minutos.");
+    }
+}
+
+public static class CalculandoRetangulo
+{
+    public static void CalcularArea()
+    {
+        Console.WriteLine("Digite a largura do retângulo:");
+        double largura = double.Parse(Console.ReadLine()!);
+        Console.WriteLine("Digite a altura do retângulo:");
+        double altura = double.Parse(Console.ReadLine()!);
+        double area = largura * altura;
+        Console.WriteLine($"A área do terreno é: {area:F2} metros quadrados.");
+    }
+}
+
+public static class CalculandoMedia
+{
+    public static void CalcularMedia()
+    {
+        Console.WriteLine("Digite a primeira nota:");
+        double nota1 = double.Parse(Console.ReadLine()!);
+        Console.WriteLine("Digite a segunda nota:");
+        double nota2 = double.Parse(Console.ReadLine()!);
+        Console.WriteLine("Digite a terceira nota:");
+        double nota3 = double.Parse(Console.ReadLine()!);
+        double media = (nota1 + nota2 + nota3) / 3;
+        Console.WriteLine($"A média das notas é: {media:F1}");
+    }
+}
+
+public static class ConverterDecimalParaInteiro
+{
+    public static void Converter()
+    {
+        Console.WriteLine("Digite o pesso total da carga:");
+        decimal pesoDecimal = decimal.Parse(Console.ReadLine()!);
+        int pesoInteiro = (int)pesoDecimal;
+        Console.WriteLine($"Quantidade de Caminhões necessários: {pesoInteiro}");
+    }
+}
+
+public static class IncrementoEDecremento
+{
+    public static void MostrarOperacoes()
+    {
+        int valor = 5;
+        Console.WriteLine("Valor inicial: " + valor);
+
+        valor--;
+        Console.WriteLine("Após decremento: " + valor);
+
+        valor++;
+        Console.WriteLine("Após incremento: " + valor);
+
+        valor++;
+        Console.WriteLine("Após incremento: " + valor);
+
+
+    }
+}
+
+public static class AumentoSalario
+{
+    public static void CalcularAumento()
+    {
+        Console.WriteLine("Digite o salário atual:");
+        decimal salarioAtual = decimal.Parse(Console.ReadLine()!);
+        Console.WriteLine("Digite a porcentagem de aumento:");
+        decimal percentualAumento = decimal.Parse(Console.ReadLine()!);
+        decimal aumento = salarioAtual + (salarioAtual * percentualAumento / 100);
+        Console.WriteLine($"O novo salário com aumento de {percentualAumento}% é: R$ {aumento:F2}");
+    }
+}
+
+
+public static class CalculoRaio
 
 
