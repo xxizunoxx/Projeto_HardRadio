@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 public static class Saudacao
 {
     public static void PerguntarNome()
@@ -516,13 +518,385 @@ public static class CalculoRaioCirculo
     }
 }
 
+// Exercício: Ordenar Números 1042 beecrowd
+public static class OrdenarNumeros
+{
+    public static void Ordenar()
+    {   
+        List<int> numeros = new List<int> ();
+        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        {
+            int valor = int.Parse(valoresStr);
+            numeros.Add(valor);
+        }
 
+        List<int> ordenados = new List<int> (numeros);
+        ordenados.Sort();
+        foreach (var num in ordenados)
+        {
+            Console.WriteLine(num);
+        }
 
+        Console.WriteLine();
 
+        foreach (var num in numeros)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
 
+public static class AreaTriangulo
+{
+    public static void CalcularArea()
+    {
+        List<float> numeros = new List<float> ();
+        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        {
+            float valor = float.Parse(valoresStr);
+            numeros.Add(valor);
+        }
+        numeros.Sort();
+        numeros.Reverse();
 
+        float A = numeros[0];
+        float B = numeros[1];
+        float C = numeros[2];
+        Console.WriteLine($"{A} {B} {C}");
+        if (A < B + C)
+        {
+            float perimetro = A + B + C;
+            Console.WriteLine($"Perimetro = {perimetro:F1}");
+        }
+        else
+        {
+            float area = ((A + B) * C) / 2;
+            Console.WriteLine($"Area = {area:F1}");
+        }
 
+    }
+}
 
+public static class Multiplos
+{
+    public static void VerificarMultiplos()
+    {
+        List<string> numeros = new List<string> ();
+        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        {
+            string valor = valoresStr;
+            numeros.Add(valor);
+        }
+
+        int A = int.Parse(numeros[0]);
+        int B = int.Parse(numeros[1]);
+
+        if (A % B == 0 || B % A == 0)
+        {
+            Console.WriteLine("Sao Multiplos");
+        }
+        else
+        {
+            Console.WriteLine("Nao sao Multiplos");
+        }
+    }
+}
+
+public static class TiposDeTriangulo
+{
+    public static void VerificarTipoTriangulo()
+    {
+        List<float> numeros = new List<float> ();
+        foreach (var valoresStr in Console.ReadLine().Split(' '))
+        {
+            float valor = float.Parse(valoresStr);
+            numeros.Add(valor);
+        }
+
+        numeros.Sort();
+        numeros.Reverse();
+        float A = numeros[0];
+        float B = numeros[1];
+        float C = numeros[2];
+
+        if (A >= B + C)
+        {
+            Console.WriteLine("NAO FORMA TRIANGULO");
+        }
+        else if (A * A == B * B + C * C)
+        {
+            Console.WriteLine("TRIANGULO RETANGULO");
+        }
+        else if (A * A > B * B + C * C)
+        {
+            Console.WriteLine("TRIANGULO OBTUSANGULO");
+        }
+        else if (A * A < B * B + C * C)
+        {
+            Console.WriteLine("TRIANGULO ACUTANGULO");
+        }
+        if (A == B && B == C)
+        {
+            Console.WriteLine("TRIANGULO EQUILATERO");
+        }
+        else if (A == B || A == C || B == C)
+        {
+            Console.WriteLine("TRIANGULO ISOSCELES");
+        }
+    }
+}
+
+public static class TempoDeJogo
+{
+    public static void CalcularTempo()
+    {
+        string[] valoresStr = Console.ReadLine().Split(' ');
+
+        int horaInicio = int.Parse(valoresStr[0]);
+        int horaFim = int.Parse(valoresStr[1]);
+        int duracao;
+
+        if (horaInicio < horaFim)
+        {
+            duracao = horaFim - horaInicio;
+        }
+        else
+        {
+            duracao = (24 - horaInicio) + horaFim;
+        }
+
+        Console.WriteLine($"O JOGO DUROU {duracao} HORA(S)");
+    }
+}
+
+public static class TempoDeJogoHorasMinutos
+{
+    public static void CalcularTempo()
+    {
+        string[] valoresStr = Console.ReadLine().Split(' ');
+
+        int horaInicio = int.Parse(valoresStr[0]);
+        int minutoIncio = int.Parse(valoresStr[1]);
+        int horaFim = int.Parse(valoresStr[2]);
+        int minutoFim = int.Parse(valoresStr[3]);
+        int duracao;
+
+        int totalInicio = horaInicio * 60 + minutoIncio;
+        int totalFim = horaFim * 60 + minutoFim;
+
+        if (totalFim <= totalInicio)
+        {
+            totalFim += 24 * 60;
+        }
+
+        duracao = totalFim - totalInicio;
+        int horas = duracao / 60;
+        int minutos = duracao % 60;
+        Console.WriteLine($"O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)");
+    }
+}
+
+public static class AumentoDeSalario
+{
+    public static void CalcularAumento()
+    {
+        double salario = double.Parse(Console.ReadLine());
+        double percentualAumento;
+
+        if (salario <= 400.00)
+        {
+            percentualAumento = 0.15;
+        }
+        else if (salario <= 800.00)
+        {
+            percentualAumento = 0.12;
+        }
+        else if (salario <= 1200.00)
+        {
+            percentualAumento = 0.10;
+        }
+        else if (salario <= 2000.00)
+        {
+            percentualAumento = 0.07;
+        }
+        else
+        {
+            percentualAumento = 0.04;
+        }
+
+        double aumento = salario * percentualAumento;
+        double novoSalario = salario + aumento;
+
+        Console.WriteLine($"Novo salario: {novoSalario:F2}");
+        Console.WriteLine($"Reajuste ganho: {aumento:F2}");
+        Console.WriteLine($"Em percentual: {percentualAumento * 100} %");
+    }
+}
+
+public static class Animal
+{
+    public static void DefinaOAnimal()
+    {
+        string nivel1 = Console.ReadLine()!;
+        string nivel2 = Console.ReadLine()!;
+        string nivel3 = Console.ReadLine()!;
+
+        if (nivel1 == "vertebrado")
+        {
+            if (nivel2 == "ave")
+            {
+                if (nivel3 == "carnivoro")
+                {
+                    Console.WriteLine("aguia");
+                }
+                else if (nivel3 == "onivoro")
+                {
+                    Console.WriteLine("pomba");
+                }
+            }
+            else if (nivel2 == "mamifero")
+            {
+                if (nivel3 == "onivoro")
+                {
+                    Console.WriteLine("homem");
+                }
+                else if (nivel3 == "herbivoro")
+                {
+                    Console.WriteLine("vaca");
+                }
+            }
+        }
+        else if (nivel1 == "invertebrado")
+        {
+            if (nivel2 == "inseto")
+            {
+                if (nivel3 == "hematofago")
+                {
+                    Console.WriteLine("pulga");
+                }
+                else if (nivel3 == "herbivoro")
+                {
+                    Console.WriteLine("lagarta");
+                }
+            }
+            else if (nivel2 == "anelideo")
+            {
+                if (nivel3 == "hematofago")
+                {
+                    Console.WriteLine("sanguessuga");
+                }
+                else if (nivel3 == "onivoro")
+                {
+                    Console.WriteLine("minhoca");
+                }
+            }
+        }
+    }
+}
+
+public static class DDD
+{
+    public static void IdentificarCidade()
+    {
+        int ddd = int.Parse(Console.ReadLine());
+
+        switch (ddd)
+        {
+            case 61:
+                Console.WriteLine("Brasilia");
+                break;
+            case 71:
+                Console.WriteLine("Salvador");
+                break;
+            case 11:
+                Console.WriteLine("Sao Paulo");
+                break;
+            case 21:
+                Console.WriteLine("Rio de Janeiro");
+                break;
+            case 32:
+                Console.WriteLine("Juiz de Fora");
+                break;
+            case 19:
+                Console.WriteLine("Campinas");
+                break;
+            case 27:
+                Console.WriteLine("Vitoria");
+                break;
+            case 31:
+                Console.WriteLine("Belo Horizonte");
+                break;
+            default:
+                Console.WriteLine("DDD nao cadastrado");
+                break;
+        }
+    }
+}
+
+public static class ImpostoDeRenda
+{
+    public static void CalcularImposto()
+    {
+        double salario = double.Parse(Console.ReadLine()!);
+        double imposto;
+
+        if (salario <= 2000.00)
+        {
+            imposto = 0.0;
+        }
+        else if (salario <= 3000.00)
+        {
+            imposto = (salario - 2000.00) * 0.08;
+        }
+        else if (salario <= 4500.00)
+        {
+            imposto = (1000.00 * 0.08) + ((salario - 3000.00) * 0.18);
+        }
+        else
+        {
+            imposto = (1000.00 * 0.08) + (1500.00 * 0.18) + ((salario - 4500.00) * 0.28);
+        }
+
+        if (imposto == 0.0)
+        {
+            Console.WriteLine("Isento");
+        }
+        else
+        {
+            Console.WriteLine($"R$ {imposto:F2}");
+        }
+    }
+}
+
+public static class NumerosPares
+{
+    public static void ExibirNumerosPares()
+    {
+        for (int i = 2; i <= 100; i += 2)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+public static class NumerosPositivos
+{
+    public static void ContarNumerosPositivos()
+    {
+        int contador = 0;
+
+        for (int i = 0; i < 6; i++)
+        {
+            double numero = double.Parse(Console.ReadLine());
+            if (numero > 0)
+            {
+                contador++;
+            }
+        }
+
+        Console.WriteLine($"{contador} valores positivos");
+    }
+}
 
 
 

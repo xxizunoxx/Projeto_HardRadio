@@ -24,6 +24,12 @@
         //CalculandoMedia.CalcularMedia();
         //AumentoSalario.CalcularAumento();
         //CalculoRaioCirculo.CalcularAreaECircunferencia();
+        //OrdenarNumeros.Ordenar();
+        //AreaTriangulo.CalcularArea();
+        //TiposDeTriangulo.VerificarTipoTriangulo();
+        //TempoDeJogo.CalcularTempo();
+        //TempoDeJogoHorasMinutos.CalcularTempo();
+        //AumentoDeSalario.CalcularAumento();
     }
 }
 
