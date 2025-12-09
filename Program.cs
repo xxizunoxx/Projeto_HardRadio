@@ -2,7 +2,9 @@
 {
     static void Main(string[] args)
     {
-        MenuPrincipal.Menu();
+        //MenuPrincipal.Menu();
+        //TempoDeUmEvento.CalcularTempo();
+        NumerosPositivosEMedia.ContarNumerosPositivos();
     }
 }
 

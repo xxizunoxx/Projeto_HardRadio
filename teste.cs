@@ -898,9 +898,73 @@ public static class NumerosPositivos
     }
 }
 
+public static class TempoDeUmEvento
+{
+    public static void CalcularTempo()
+    {
+        string[] dtInicial = Console.ReadLine()!.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+        int diaInicio = int.Parse(dtInicial[1]);
 
+        string[] horaInicial = Console.ReadLine()!.Split(new char[] { ' ', ':' }, StringSplitOptions.RemoveEmptyEntries);
+        int horaInicio = int.Parse(horaInicial[0]);
+        int minutoInicio = int.Parse(horaInicial[1]);
+        int segundoInicio = int.Parse(horaInicial[2]);
 
+        string[] dtFinal = Console.ReadLine()!.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+        int diaFim = int.Parse(dtFinal[1]);
 
+        string[] horaFinal = Console.ReadLine()!.Split(new char[] { ' ', ':' }, StringSplitOptions.RemoveEmptyEntries);
+        int horaFim = int.Parse(horaFinal[0]);
+        int minutoFim = int.Parse(horaFinal[1]);
+        int segundoFim = int.Parse(horaFinal[2]);
+
+        int inicio = diaInicio * 86400 + horaInicio * 3600 + minutoInicio * 60 + segundoInicio;
+        int fim = diaFim * 86400 + horaFim * 3600 + minutoFim * 60 + segundoFim;
+
+        int duracao = fim - inicio;
+
+        int dias = duracao / 86400;
+        duracao %= 86400;
+
+        int horas = duracao / 3600;
+        duracao %= 3600;
+
+        int minutos = duracao / 60;
+        int segundos = duracao % 60;
+
+        Console.WriteLine($"{dias} dia(s)");
+        Console.WriteLine($"{horas} hora(s)");
+        Console.WriteLine($"{minutos} minuto(s)");
+        Console.WriteLine($"{segundos} segundo(s)");
+    }
+}
+
+public static class NumerosPositivosEMedia
+{
+    public static void ContarNumerosPositivos()
+    {
+        int contador = 0;
+        List<double> soma = new List<double>();
+        double media = 0;
+
+        for (int i = 0; i < 6; i++)
+        {
+            double numero = double.Parse(Console.ReadLine()!);
+            if (numero > 0)
+                {
+                    contador++;
+                    soma.Add(numero);
+                }
+        }
+        if (soma.Count > 0)
+        {
+            media = soma.Average();
+        }
+
+        Console.WriteLine($"{contador} valores positivos");
+        Console.WriteLine($"{media:F1}");
+    }
+}
 
 
 
